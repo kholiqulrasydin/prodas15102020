@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1602710537 source:c:\users\kholiqul rasyidin\desktop\prodas\praktikumprodas2\main.cpp
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<cstdlib>
+
+1602715745 source:c:\users\kholiqul rasyidin\desktop\praktikumprodas2\main.cpp
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<cstdlib>
+
