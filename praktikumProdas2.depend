@@ -5,9 +5,10 @@
 	<windows.h>
 	<cstdlib>
 
-1602715745 source:c:\users\kholiqul rasyidin\desktop\praktikumprodas2\main.cpp
+1603063746 source:c:\users\kholiqul rasyidin\desktop\praktikumprodas2\main.cpp
 	<iostream>
 	<conio.h>
 	<windows.h>
 	<cstdlib>
+	<math.h>
 

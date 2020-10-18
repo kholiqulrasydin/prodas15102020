@@ -28,10 +28,26 @@ void gotoXY(int x, int y)
 	SetConsoleCursorPosition(console,CursorPosition);
 }
 
+void segitigaHeader(int alas, int tinggi, int x){
+    gotoXY(18,3); cout << "MENGHITUNG SEGITIGA SIKU-SIKU";
+    gotoXY(18,4); cout << "======================================================================================";
+    gotoXY(18,5); cout << "Alas (sisi pertama) dari Segitiga Siku-siku = " << alas;
+    gotoXY(18,6); cout << "Tinggi (sisi kedua) dari Segitiga Siku-Siku = " << tinggi;
+    gotoXY(18,7); cout << "======================================================================================";
+    gotoXY(18,10); cout << "(Gunakan Arah Panah Keyboard untuk mengganti posisi kursor)";
+    gotoXY(18,x); cout << "->";
+}
+
+int segitigaPanjangSisiMiring(int sisiSikuSikuPertama, int tinggiSikuSikuKedua){
+    int hasil;
+    hasil = sqrt(sisiSikuSikuPertama*sisiSikuSikuPertama + tinggiSikuSikuKedua*tinggiSikuSikuKedua);
+    return hasil;
+}
+
 void Clear()
 {
     system("cls");
-    gotoXY(1,1); cout << "Much Kholiqul Rosidin NIM 20051397058 2020B";
+    gotoXY(1,1); cout << "Much Kholiqul Rosidin NIM 20051397058 2020B | Program Sederhana";
 }
 
 void hitungGajiKaryawan(){
@@ -131,31 +147,16 @@ void hitungGajiKaryawan(){
     }
 }
 
-void segitigaHeader(int alas, int tinggi, int x){
-    gotoXY(18,3); cout << "MENGHITUNG SEGITIGA SIKU-SIKU";
-    gotoXY(18,4); cout << "======================================================================================";
-    gotoXY(18,5); cout << "Alas (sisi pertama) dari Segitiga Siku-siku = " << alas;
-    gotoXY(18,6); cout << "Tinggi (sisi kedua) dari Segitiga Siku-Siku = " << tinggi;
-    gotoXY(18,7); cout << "======================================================================================";
-    gotoXY(18,10); cout << "(Gunakan Arah Panah Keyboard untuk mengganti posisi kursor)";
-    gotoXY(18,x); cout << "->";
-}
-
-int segitigaPanjangSisiMiring(int sisiSikuSikuPertama, int tinggiSikuSikuKedua){
-    int hasil;
-    hasil = sqrt(sisiSikuSikuPertama + tinggiSikuSikuKedua);
-    return hasil;
-}
-
 int segitigaLuas(int alas, int tinggi){
     int hasil;
     hasil = 0.5 * alas * tinggi;
     return hasil;
 }
 
-int segitigaKeliling(int alas, int tinggi, int sisiMiring){
+int segitigaKeliling(int alas, int tinggi){
     int keliling;
-    keliling = alas + tinggi +sisiMiring;
+    int miring = sqrt(alas*alas + tinggi*tinggi);
+    keliling = alas + tinggi + miring;
     return keliling;
 }
 
@@ -275,7 +276,7 @@ void menghitungSegitigaSikuSiku(){
 					break;
 				}
 				case 2: {
-				    keliling += segitigaKeliling(alas, tinggi, sisiMiring);
+				    keliling += segitigaKeliling(alas, tinggi);
 				    Clear();
 				    menu_item -= 1;
                     menu_item += 2;
